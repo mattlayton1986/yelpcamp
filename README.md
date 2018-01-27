@@ -4,8 +4,11 @@
 
 ## About branches
 
-###v<x> Branches
+### v<x> Branches
 Version branches (e.g., v1) correspond to Colt's version files. Whenever he moves to a new version of the project in the course, I created a new branch to better keep track of discrete changes in the app that form a block of learning.
 
-###Master Branch
+### Master Branch
 The master branch contains the composite of the entire web application. After each version branch is complete, I've merged the branch back into master, while preserving the version branches for reference.
+
+## Excluded files
+* node_modules directory: modules are included in package.json and can be installed in local directory via npm after cloning this repository.
