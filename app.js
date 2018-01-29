@@ -1,9 +1,11 @@
 // *** INITIALIZE APP *** //
 // ********************** //
 
-var app 		= require('express')(),
+var app 				= require('express')(),
 		mongoose 		= require('mongoose'),
-		bodyParser 	= require('body-parser');
+		bodyParser 	= require('body-parser'),
+
+		Campground 	= require('./models/campground');
 
 mongoose.connect('mongodb://localhost/yelp_camp');
 
@@ -14,11 +16,7 @@ app.set('view engine', 'ejs');
 // *** SCHEMA SETUP *** //
 // ******************** //
 
-var Campground = mongoose.model("Campground", new mongoose.Schema({
-	name: String,
-	image: String,
-	description: String
-}));
+
 
 // Campground.create(
 // 	{
@@ -35,7 +33,7 @@ var Campground = mongoose.model("Campground", new mongoose.Schema({
 // 		}
 // 	}
 // );
-
+	
 // *** ROUTES *** //
 // ************** //
 
@@ -92,9 +90,7 @@ app.get('/campgrounds/:id', (req, res) => {
 		} else {
 	res.render('show', {campground: foundCampground});
 		}
-	});
-	
-	
+	});	
 });
 
 
