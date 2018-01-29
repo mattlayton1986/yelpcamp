@@ -5,7 +5,11 @@ var app 				= require('express')(),
 		mongoose 		= require('mongoose'),
 		bodyParser 	= require('body-parser'),
 
-		Campground 	= require('./models/campground');
+		Campground 	= require('./models/campground'),
+
+		seedDB 			= require('./seeds');
+
+seedDB();
 
 mongoose.connect('mongodb://localhost/yelp_camp');
 
