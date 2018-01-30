@@ -1,7 +1,8 @@
 // *** INITIALIZE APP *** //
 // ********************** //
 
-var app 				= require('express')(),
+var express			= require('express'),
+		app 				= express(),
 		mongoose 		= require('mongoose'),
 		bodyParser 	= require('body-parser'),
 
@@ -13,6 +14,7 @@ var app 				= require('express')(),
 mongoose.connect('mongodb://localhost/yelp_camp');
 
 app.use(bodyParser.urlencoded( {extended: true} ));
+app.use(express.static(__dirname + "/public"));
 app.set('view engine', 'ejs');
 
 seedDB();
@@ -108,17 +110,7 @@ app.post('/campgrounds/:id/comments', (req, res) => {
 					// connect new comment to campground
 					campground.comments.push(comment._id);
 					campground.save();
-					// redirect to campground show page
-
-					console.log(campground._id, 
-											typeof campground._id,
-											'/campgrounds/' + campground._id);
-					console.log(req.params.id, 
-											typeof req.params.id,
-											'/campgrounds/' + req.params.id);
-
-
-
+					// redirect to campground show page					
 					res.redirect('/campgrounds/' + req.params.id);
 				}
 			});	
