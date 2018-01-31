@@ -19,11 +19,13 @@ The master branch contains the composite of the entire web application. After ea
 
   * referenced in above answer: [BSON types > ObjectId](https://docs.mongodb.com/manual/reference/bson-types/#objectid) (from MongoDB docs)
 
-* [Confused about password.authenticate syntax](https://www.udemy.com/the-web-developer-bootcamp/learn/v4/questions/3600388)  
-
+* [Confused about password.authenticate syntax](https://www.udemy.com/the-web-developer-bootcamp/learn/v4/questions/3600388) 
 
 ### Stack Overflow
 Oops -- I haven't posted any questions on Stack Overflow yet about this project. Check back later!
+
+## Notable errors encountered during this project
+* `Error: listen EADDRINUSE :::3000` (when running `node app.js`): [SO Answer](https://stackoverflow.com/a/30163868)
 
 ## Excluded Files
 * `node_modules` directory: modules are included in package.json and can be installed in local directory via npm after cloning this repository.
