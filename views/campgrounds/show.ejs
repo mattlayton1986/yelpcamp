@@ -12,7 +12,7 @@
 			<!-- MAP -->
 		</div>
 		<div class="col-md-9">
-			<div class="img-thumbnail">
+			<div class="thumbnail">
 				<img class="img-responsive" src="<%= campground.image %>">
 				<div class="caption-full">
 					<h4 class="pull-right">$9.00/night</h4>
@@ -25,7 +25,12 @@
 							<em>Submitted by <%= campground.author.username %></em>
 							</p>
 					</p>
-					<a class="btn btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+					<% if (currentUser && campground.author.id.equals(currentUser._id)) { %>
+					<a class="btn btn-warning" href="/campgrounds/<%= campground._id %>/edit">Edit <%= campground.name %></a>
+					<form id="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+						<button class="btn btn-danger">Delete <%= campground.name %></button>
+					<% } %>
+					</form>
 				</div>
 			</div>
 			<div class="well">
@@ -50,9 +55,5 @@
 		</div>
 	</div>
 </div>
-
-
-
-
 
 <% include ../partials/footer %>
