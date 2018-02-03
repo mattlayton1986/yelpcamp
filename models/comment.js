@@ -5,7 +5,13 @@ var Comment = mongoose.model(
 	// Comment Schema
 	new mongoose.Schema({
 		text: String,
-		author: String
+		author: {
+			id: {
+				type: mongoose.Schema.Types.ObjectId,
+				ref: 'User'
+			},
+			username: String
+		}
 	})
 );
 
