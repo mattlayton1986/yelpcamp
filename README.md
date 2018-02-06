@@ -34,3 +34,4 @@ Oops -- I haven't posted any questions on Stack Overflow yet about this project.
 * [Login/Signup UI Improvements](http://slides.com/nax3t/yelpcamp-refactor-ui#/)
 * [Add Dynamic Price Feature](http://slides.com/nax3t/yelpcamp-refactor-pricing#/)
 * [Google Maps for Campgrounds](http://slides.com/nax3t/yelpcamp-refactor-google-maps#/)
+* [Add Moment.js for Campground & Comment creation](http://slides.com/nax3t/yelpcamp-refactor-moment#/)
