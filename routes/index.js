@@ -4,6 +4,7 @@ var router = express.Router();
 var passport = require('passport');
 
 var User = require('../models/user');
+var adminSecret = process.env.ADMIN_SECRET || 'password';
 
 // Root Route
 router.get('/', (req, res) => {
@@ -18,7 +19,7 @@ router.get('/register', ( req, res ) => {
 // REGISTER CREATE
 router.post('/register', ( req, res ) => {
 	var newUser = new User({username: req.body.username});
-	if (req.body.admin === ADMIN_SECRET || 'password') {
+	if (req.body.admin === adminSecret) {
 		newUser.isAdmin = true;
 	}
 	User.register(newUser, req.body.password, (err, user) => {
