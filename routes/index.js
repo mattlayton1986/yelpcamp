@@ -21,6 +21,8 @@ router.post('/register', ( req, res ) => {
 	var newUser = new User({username: req.body.username});
 	if (req.body.admin === adminSecret) {
 		newUser.isAdmin = true;
+	} else {
+		console.log(adminSecret);
 	}
 	User.register(newUser, req.body.password, (err, user) => {
 		if (err) {

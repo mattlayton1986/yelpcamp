@@ -23,7 +23,6 @@ var commentRoutes 				= require('./routes/comments'),
 		indexRoutes 					= require('./routes/index.js');
 
 mongoose.connect(process.env.DATABASEURL);
-// mongoose.connect('mongodb://matt:password@ds125058.mlab.com:25058/wdb-yelpcamp');
 
 app.use(bodyParser.urlencoded( {extended: true} ));
 app.use(express.static(__dirname + "/public"));
@@ -32,7 +31,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 app.locals.moment = require('moment');
 
-var port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 // seedDB(); // seed the database
 
 // PASSPORT CONFIGURATION
@@ -63,7 +62,7 @@ app.use('/campgrounds/:id/comments', commentRoutes);
 
 // *** SERVER *** //
 // ************** //
-app.listen(port, () => {
-	console.log('YelpCamp server is running on port 3000');
+app.listen(PORT, () => {
+	console.log(`YelpCamp server is running on port ${PORT}`);
 });
 
