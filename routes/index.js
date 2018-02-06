@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 
 // REGISTER FORM
 router.get('/register', ( req, res ) => {
-	res.render('register');
+	res.render('register', {page: 'register'});
 });
 
 // REGISTER CREATE
@@ -32,7 +32,7 @@ router.post('/register', ( req, res ) => {
 
 // LOGIN FORM
 router.get('/login', ( req, res ) => {
-	res.render('login');
+	res.render('login', {page: 'login'});
 });
 
 // LOGIN LOGIC

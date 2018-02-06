@@ -29,3 +29,6 @@ Oops -- I haven't posted any questions on Stack Overflow yet about this project.
 
 ## Excluded Files
 * `node_modules` directory: modules are included in package.json and can be installed in local directory via npm after cloning this repository.
+
+## Refactors 
+* [Login/Signup UI Improvements](http://slides.com/nax3t/yelpcamp-refactor-ui#/)
