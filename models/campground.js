@@ -9,7 +9,10 @@ var Campground = mongoose.model(
 		name: String,
 		image: String,
 		description: String,
-		price: Number,
+		cost: Number,
+		location: String,
+		lat: Number,
+		lng: Number,
 		author: {
 			id: {
 				type: mongoose.Schema.Types.ObjectId,
