@@ -32,7 +32,6 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 var port = process.env.PORT || 3000;
-
 // seedDB(); // seed the database
 
 // PASSPORT CONFIGURATION

@@ -23,7 +23,6 @@ router.post('/', middleware.isLoggedIn,  (req, res) => {
 	// look up campground using ID
 	Campground.findById(req.params.id, (err, campground) => {
 		if (err) {
-			console.log(err);
 			res.redirect('/campgrounds');
 		} else {
 			// create new comment
@@ -49,13 +48,20 @@ router.post('/', middleware.isLoggedIn,  (req, res) => {
 
 // EDIT
 router.get('/:comment_id/edit', middleware.checkCommentOwnership, (req, res) => {
-	Comment.findById(req.params.comment_id, (err, foundComment) => {
-		if (err) {
+	Campground.findById(req.params.id, (err, foundCampground) => {
+		if (err || !foundCampground) {
+			req.flash('error', 'Oops, something went wrong! Try again.');
 			res.redirect('back');
-		} else {
-			res.render('comments/edit', {campground_id: req.params.id,
-																		comment: foundComment});
 		}
+		Comment.findById(req.params.comment_id, (err, foundComment) => {
+			if (err || !foundComment) {
+				req.flash('error', 'Oops, something went wrong! Try again.');
+				res.redirect('back');
+			} else {
+				res.render('comments/edit', {campground_id: req.params.id,
+																			comment: foundComment});
+			}
+		});
 	});
 });
 
