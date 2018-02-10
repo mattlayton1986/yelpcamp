@@ -4,6 +4,9 @@ var router = express.Router();
 var passport = require('passport');
 
 var User = require('../models/user');
+var Campground = require('../models/campground');
+
+// fallback adminSecret used for development only
 var adminSecret = process.env.ADMIN_SECRET || 'password';
 
 // Root Route
@@ -18,7 +21,13 @@ router.get('/register', ( req, res ) => {
 
 // REGISTER CREATE
 router.post('/register', ( req, res ) => {
-	var newUser = new User({username: req.body.username});
+	var newUser = new User({
+			username: req.body.username,
+			firstName: req.body.firstName,
+			lastName: req.body.lastName,
+			avatar: req.body.avatar,
+			email: req.body.email
+		});
 	if (req.body.admin === adminSecret) {
 		newUser.isAdmin = true;
 	} else {
@@ -56,6 +65,24 @@ router.get('/logout', ( req, res ) => {
 	req.logout();
 	req.flash('success', "Logged you out!");
 	res.redirect('/campgrounds');
+});
+
+// USER PROFILE
+router.get('/users/:id', (req, res) => {
+	User.findById(req.params.id, (err, foundUser) => {
+		if (err) {
+			req.flash('error', 'Sorry, this user could not be found.');
+			res.redirect('back');
+		}
+		Campground.find().where('author.id').equals(foundUser.id).exec((err, campgrounds) => {
+			if (err) {
+				req.flash('error', 'Something went wrong');
+				req.redirect('back');
+			}
+			res.render('users/show', {user: foundUser,
+																campgrounds: campgrounds});
+		});
+	});
 });
 
 module.exports = router; 

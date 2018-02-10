@@ -26,6 +26,7 @@ Oops -- I haven't posted any questions on Stack Overflow yet about this project.
 
 ## Notable errors encountered during this project
 * `Error: listen EADDRINUSE :::3000` (when running `node app.js`): [SO Answer](https://stackoverflow.com/a/30163868)
+* `UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 2): TypeError: Parameter "url" must be a string, not undefined` -- occurred because I was passing `process.env.DATABASEURL` environment variable to `mongoose.connect()`. This doesn't work on local environment if the local environment variable doesn't exist or has been cleared (e.g., restarting terminal).
 
 ## Excluded Files
 * `node_modules` directory: modules are included in package.json and can be installed in local directory via npm after cloning this repository.
