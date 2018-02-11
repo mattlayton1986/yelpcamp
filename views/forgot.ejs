@@ -1,15 +1,15 @@
-<% include ./partials/header %>
+<% include partials/header %>
 
 	<div class="row">
-		<div class="col-md-12">
+		<div class="auth-form">
 			<form action="/forgot" method="POST">
-				<legend>Forgot Password</legend>
+				<legend class="form-title">Forgot Password</legend>
 				<div class="form-group">
 					<label for="email">Email</label>
 					<input type="email" name="email" class="form-control" autofocus>
 				</div>
 				<div class="formgroup">
-					<input type="submit" class="btn btn-primary" value="Reset Password">
+					<input type="submit" class="btn btn-lg btn-primary btn-block" value="Reset Password">
 				</div>
 			</form>
 		</div>

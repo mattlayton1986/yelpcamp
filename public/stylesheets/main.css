@@ -20,3 +20,15 @@
 	height: 400px;
 	width: 100%;
 }
+
+.form-title {
+	text-align: center;
+	font-size: 3.5rem;
+	color: #777;
+	border: none;
+}
+
+.auth-form {
+	width: 30%;
+	margin: 25px auto;
+}

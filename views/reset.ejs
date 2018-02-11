@@ -1,8 +1,9 @@
-<% include ./partials/header %>
+<% include partials/header %>
+
 <div class="row">
-	<div class="col-md-12">
+	<div class="auth-form">
 		<form action="/reset/<%= token %>" method="POST">
-		  <legend>Reset Password</legend>
+		  <legend class="form-title">Reset Password</legend>
 		  <div class="form-group">
 		    <label for="password">New Password</label>
 		    <input type="password" name="password" value="" placeholder="New password" autofocus="autofocus" class="form-control"/>
@@ -12,9 +13,9 @@
 		    <input type="password" name="confirm" value="" placeholder="Confirm password" class="form-control"/>
 		  </div>
 		  <div class="form-group">
-		    <button type="submit" class="btn btn-primary">Update Password</button>
+		    <button type="submit" class="btn btn-lg btn-primary btn-block">Update Password</button>
 		  </div>
 		</form>
 	</div>
 </div>
-<% include ./partials/footer %>
+<% include partials/footer %>
