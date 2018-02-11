@@ -21,7 +21,11 @@ router.get('/register', ( req, res ) => {
 
 // REGISTER CREATE
 router.post('/register', ( req, res ) => {
-	var newUser = new User({username: req.body.username});
+	var newUser = new User(
+    {
+      username: req.body.username,
+      email: req.body.email
+    });
 	if (req.body.admin === adminSecret) {
 		newUser.isAdmin = true;
 	} else {
