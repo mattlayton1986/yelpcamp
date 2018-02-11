@@ -35,3 +35,6 @@ Oops -- I haven't posted any questions on Stack Overflow yet about this project.
 * [Add Dynamic Price Feature](http://slides.com/nax3t/yelpcamp-refactor-pricing#/)
 * [Google Maps for Campgrounds](http://slides.com/nax3t/yelpcamp-refactor-google-maps#/)
 * [Add Moment.js for Campground & Comment creation](http://slides.com/nax3t/yelpcamp-refactor-moment#/)
+* [Add Admin Role](https://www.youtube.com/watch?v=somc45pnM2k)
+* [User Profile Pages](https://youtu.be/6ar77jZ_ajc) -- **incomplete**
+* [Password Reset](https://youtu.be/UV9FvlTySGg)
