@@ -29,8 +29,9 @@
 }
 
 .auth-form {
-	width: 30%;
+	width: 35%;
 	margin: 25px auto;
+	min-width: 300px;
 }
 
 .search {
