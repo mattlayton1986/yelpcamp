@@ -32,3 +32,9 @@
 	width: 30%;
 	margin: 25px auto;
 }
+
+.search {
+	float: right;
+	line-height: 3.25em;
+	margin-left: 2rem;
+}

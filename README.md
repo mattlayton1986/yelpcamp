@@ -38,3 +38,4 @@ Oops -- I haven't posted any questions on Stack Overflow yet about this project.
 * [Add Admin Role](https://www.youtube.com/watch?v=somc45pnM2k)
 * [User Profile Pages](https://youtu.be/6ar77jZ_ajc) -- **incomplete**
 * [Password Reset](https://youtu.be/UV9FvlTySGg)
+* [Fuzzy Search](https://www.youtube.com/watch?v=9_lKMTXVk64)
